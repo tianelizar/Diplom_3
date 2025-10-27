@@ -53,13 +53,13 @@ class TestFeed:
         feed_page = FeedPage(authorized_new_user)
 
         with allure.step('Дождаться загрузки страницы'):
-            constructor_page.constructor_page_loading_wait()
+            constructor_page.page_loading_wait()
 
         with allure.step('Перейти в ленту заказов'):
             constructor_page.click_on_feed()
 
         with allure.step('Получить значение счётчика заказов за сегодня'):
-            feed_page.page_loading_wait()
+            constructor_page.page_loading_wait()
             initial_counter = feed_page.get_today_counter()
 
         with allure.step('Вернуться в конструктор'):
@@ -74,7 +74,7 @@ class TestFeed:
             constructor_page.create_order()
 
         with allure.step('Закрыть окно подтверждения заказа'):
-            feed_page.page_loading_wait()
+            constructor_page.page_loading_wait()
             constructor_page.wait_popup_close_visible()
             constructor_page.page_loading_wait()
             constructor_page.close_order_popup()
@@ -95,7 +95,7 @@ class TestFeed:
         feed_page = FeedPage(authorized_new_user)
 
         with allure.step('Дождаться загрузки страницы'):
-            constructor_page.constructor_page_loading_wait()
+            constructor_page.page_loading_wait()
             constructor_page.wait_for_ingredients()
 
         with allure.step('Перетащить кратерную булку в конструктор'):
@@ -105,13 +105,13 @@ class TestFeed:
             constructor_page.create_order()
 
         with allure.step('Получить номер заказа'):
-            feed_page.page_loading_wait()
+            constructor_page.page_loading_wait()
             constructor_page.wait_popup_close_visible()
             constructor_page.page_loading_wait()
             order_number = constructor_page.get_order_number()
 
         with allure.step('Закрыть окно подтверждения заказа'):
-            feed_page.page_loading_wait()
+            constructor_page.page_loading_wait()
             constructor_page.wait_popup_close_visible()
             constructor_page.page_loading_wait()
             constructor_page.close_order_popup()

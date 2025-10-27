@@ -72,11 +72,7 @@ class BasePage:
         else:
             element = self.wait_until_element_clickable(element_or_locator, timeout)
         element.click()
-    
-    @allure.step('Подождать исчезновения оверлея')
-    def page_loading_wait(self):
-        self.wait_for_element_hide(MainPageLocators.OVERLAY_MAIN)
-
+           
    
     @allure.step('Проверка отсутствия оверлея')
     def no_visible_overlays(self, driver, overlay_locator):

@@ -7,7 +7,7 @@ from pages.base_page import BasePage
 class ConstructorPage(BasePage):
 
     @allure.step('Дождаться загрузки страницы')
-    def constructor_page_loading_wait(self):
+    def page_loading_wait(self):
         self.wait_for_element_hide(MainPageLocators.OVERLAY_MAIN)
 
     @allure.step('Дождаться отображения хедера')

@@ -9,13 +9,13 @@ class TestConstructorPage:
         constructor_page = ConstructorPage(driver)
 
         with allure.step('Дождаться загрузки страницы'):
-            constructor_page.constructor_page_loading_wait()
+            constructor_page.page_loading_wait()
 
         with allure.step('Перейти по клику на ленту заказов'):
             constructor_page.click_on_feed()
 
         with allure.step('Дождаться загрузки страницы'):
-            constructor_page.constructor_page_loading_wait()
+            constructor_page.page_loading_wait()
 
         with allure.step('Проверить адрес страницы ленты заказов'):
             assert constructor_page.is_feed_page(), "Не открылась лента заказов"
@@ -25,19 +25,19 @@ class TestConstructorPage:
         constructor_page = ConstructorPage(driver)
 
         with allure.step('Дождаться загрузки страницы'):
-            constructor_page.constructor_page_loading_wait()
+            constructor_page.page_loading_wait()
 
         with allure.step('Перейти по клику на ленту заказов'):
             constructor_page.click_on_feed()
 
         with allure.step('Дождаться загрузки страницы'):
-            constructor_page.constructor_page_loading_wait()
+            constructor_page.page_loading_wait()
 
         with allure.step('Перейти по клику на главную страницу конструктора'):
             constructor_page.click_on_constructor()
 
         with allure.step('Дождаться загрузки страницы'):
-            constructor_page.constructor_page_loading_wait()
+            constructor_page.page_loading_wait()
 
         with allure.step('Проверить адрес страницы конструктора'):
             assert constructor_page.is_main_page(), "Не на главной странице конструктора"
@@ -47,7 +47,7 @@ class TestConstructorPage:
         constructor_page = ConstructorPage(driver)
 
         with allure.step('Дождаться загрузки страницы'):
-            constructor_page.constructor_page_loading_wait()
+            constructor_page.page_loading_wait()
 
         with allure.step('Дождаться видимости ингредиентов'):
             constructor_page.wait_for_ingredients()
@@ -66,7 +66,7 @@ class TestConstructorPage:
         constructor_page = ConstructorPage(driver)
 
         with allure.step('Дождаться загрузки страницы'):
-            constructor_page.constructor_page_loading_wait()
+            constructor_page.page_loading_wait()
 
         with allure.step('Дождаться видимости ингредиентов'):
             constructor_page.wait_for_ingredients()
@@ -94,7 +94,7 @@ class TestConstructorPage:
         constructor_page = ConstructorPage(driver)
 
         with allure.step('Дождаться загрузки страницы'):
-            constructor_page.constructor_page_loading_wait()
+            constructor_page.page_loading_wait()
 
         with allure.step('Дождаться видимости ингредиентов'):
             constructor_page.wait_for_ingredients()
@@ -119,7 +119,7 @@ class TestConstructorPage:
         constructor_page = ConstructorPage(driver)
 
         with allure.step('Дождаться загрузки страницы '):
-            constructor_page.constructor_page_loading_wait()
+            constructor_page.page_loading_wait()
 
         with allure.step('Получить начальное значение счётчика кратерной булки'):
             initial_counter = constructor_page.get_crater_bun_counter_value()

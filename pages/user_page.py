@@ -4,8 +4,13 @@ from helpers.data import Url, Credentials
 from helpers.generator import generate_user_data
 from pages.base_page import BasePage
 from locators.login_page_locators import LoginLocators
+from locators.main_page_locators import MainPageLocators
     
 class LoginUser(BasePage):
+
+    @allure.step('Дождаться загрузки страницы')
+    def page_loading_wait(self):
+        self.wait_for_element_hide(MainPageLocators.OVERLAY_MAIN)
     
     @allure.step('Кликнуть по полю емейл')
     def click_on_email(self):

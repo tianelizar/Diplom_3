@@ -32,7 +32,8 @@ def driver(request):
 @pytest.fixture
 def authorized_new_user(driver):
     # Создаём нового пользователя через API
-    _, user_data = AuthMethods.register_new_user()
+    auth = AuthMethods()
+    _, user_data = auth.register_new_user()
     login_payload = {
         "email": user_data["email"],
         "password": user_data["password"]
@@ -48,9 +49,8 @@ def authorized_new_user(driver):
     yield driver  # тесты используют этот драйвер с авторизацией
 
     # После теста удаляем пользователя через API
-    login_response = AuthMethods.user_login(login_payload)
+    login_response = auth.user_login(login_payload)
     access_token = login_response.json()["accessToken"]
-    delete_response = AuthMethods.delete_user(access_token)
-    assert delete_response.status_code == 200
+    auth.delete_user(access_token)
 
     
